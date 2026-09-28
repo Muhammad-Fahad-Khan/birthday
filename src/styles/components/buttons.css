@@ -1,0 +1,67 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 52px;
+  padding: 0.9em 1.8em;
+  border-radius: 999px;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 0.5s var(--ease-out),
+    box-shadow 0.5s var(--ease-out),
+    background-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  cursor: default;
+  opacity: 0.7;
+  transform: none;
+}
+
+.btn--primary {
+  color: #fff;
+  background: linear-gradient(120deg, var(--c-pink), var(--c-magenta) 55%, var(--c-violet));
+  background-size: 200% 100%;
+  box-shadow: 0 14px 40px -12px rgb(255 95 162 / 0.7);
+  animation: btn-shimmer 5s ease-in-out infinite;
+}
+
+.btn--primary:hover {
+  box-shadow: 0 20px 50px -12px rgb(255 95 162 / 0.9);
+}
+
+.btn--ghost {
+  color: var(--c-text);
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn--ghost:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+
+@keyframes btn-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

@@ -1,0 +1,147 @@
+.memories {
+  height: 100svh;
+  overflow: hidden;
+}
+
+.memories__header {
+  position: absolute;
+  inset: clamp(80px, 12vh, 110px) 0 auto;
+  z-index: 2;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.memories__header .section-title {
+  font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3.4rem);
+}
+
+.memories__viewport {
+  position: absolute;
+  inset: 0;
+  perspective: 1000px;
+  perspective-origin: 50% 55%;
+}
+
+.memory {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  width: min(430px, 82vw);
+  padding: 14px 14px 24px;
+  border-radius: var(--radius-lg);
+  will-change: transform, opacity;
+}
+
+.memory__media {
+  aspect-ratio: 4 / 3;
+  border-radius: calc(var(--radius-lg) - 10px);
+  overflow: hidden;
+}
+
+.memory__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memory__art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background:
+    radial-gradient(circle at 30% 25%, rgb(255 255 255 / 0.35), transparent 40%),
+    linear-gradient(135deg, var(--memory-from), var(--memory-to));
+}
+
+.memory__art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-radial-gradient(circle at 70% 80%, rgb(255 255 255 / 0.07) 0 2px, transparent 2px 18px);
+}
+
+.memory__art span {
+  font-size: clamp(3.4rem, 8vw, 5rem);
+  filter: drop-shadow(0 12px 22px rgb(0 0 0 / 0.3));
+  animation: memory-bob 4s ease-in-out infinite;
+}
+
+.memory__body {
+  display: grid;
+  gap: 6px;
+  padding: 18px 10px 0;
+}
+
+.memory__date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-rose);
+}
+
+.memory__date span {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.68rem;
+  letter-spacing: 0;
+  background: linear-gradient(135deg, var(--memory-from), var(--memory-to));
+  color: #fff;
+}
+
+.memory__title {
+  font-family: var(--f-serif);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.memory__text {
+  font-size: 0.94rem;
+  color: var(--c-text-muted);
+}
+
+.memories__counter {
+  position: absolute;
+  bottom: max(28px, env(safe-area-inset-bottom));
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  translate: -50% 0;
+  font-family: var(--f-serif);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-text-muted);
+}
+
+.memories__counter-bar {
+  width: clamp(100px, 20vw, 180px);
+  height: 2px;
+  background: rgb(255 255 255 / 0.15);
+  overflow: hidden;
+}
+
+.memories__counter-bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-pink), var(--c-gold));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+@keyframes memory-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(4deg);
+  }
+}

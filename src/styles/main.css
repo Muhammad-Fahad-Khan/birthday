@@ -1,0 +1,20 @@
+/* Base */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
+@import './base/layout.css';
+
+/* Components */
+@import './components/buttons.css';
+@import './components/preloader.css';
+@import './components/hud.css';
+@import './components/cursor.css';
+
+/* Sections */
+@import './sections/hero.css';
+@import './sections/wishes.css';
+@import './sections/story.css';
+@import './sections/memories.css';
+@import './sections/celebrate.css';
+@import './sections/letter.css';
+@import './sections/finale.css';

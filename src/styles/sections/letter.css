@@ -1,0 +1,183 @@
+.letter {
+  display: grid;
+  align-content: center;
+  padding-block: clamp(100px, 14vh, 150px);
+}
+
+.letter__container {
+  display: grid;
+  justify-items: center;
+  gap: clamp(36px, 6vh, 64px);
+}
+
+/* ── Envelope ───────────────────────────────────────── */
+
+.envelope-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 36px;
+  margin-bottom: 20px;
+}
+
+.envelope {
+  position: relative;
+  width: min(380px, 84vw);
+  aspect-ratio: 16 / 10;
+  margin-top: 60px;
+  perspective: 1000px;
+  filter: drop-shadow(0 30px 40px rgb(8 0 18 / 0.55));
+}
+
+.envelope > * {
+  position: absolute;
+}
+
+.envelope__back {
+  inset: 0;
+  z-index: 0;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #b3136b, #6d1350);
+}
+
+.envelope__peek {
+  inset: 8% 7% 10%;
+  z-index: 1;
+  border-radius: 6px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 18px, rgb(179 19 107 / 0.12) 18px 19px),
+    linear-gradient(180deg, #fff, #ffe3ef);
+}
+
+.envelope__front {
+  inset: 0;
+  z-index: 2;
+  border-radius: 10px;
+  background: linear-gradient(200deg, #ff5fa2, #d6246e 60%, #b3136b);
+  clip-path: polygon(0 0, 50% 56%, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope__flap {
+  inset: 0 0 auto;
+  z-index: 3;
+  height: 62%;
+  background: linear-gradient(180deg, #ff9ec4, #e84393);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: 50% 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.envelope__seal {
+  top: 62%;
+  left: 50%;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: -29px 0 0 -29px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #ffd6e7;
+  background: radial-gradient(circle at 35% 30%, #e11d48, #9f1239 70%);
+  box-shadow:
+    0 6px 16px rgb(0 0 0 / 0.35),
+    inset 0 -4px 8px rgb(0 0 0 / 0.25),
+    inset 0 3px 6px rgb(255 255 255 / 0.25);
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+.envelope__to {
+  inset: auto 0 9%;
+  z-index: 3;
+  text-align: center;
+  font-family: var(--f-script);
+  font-size: clamp(1.3rem, 1rem + 1vw, 1.7rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 10px rgb(0 0 0 / 0.25);
+}
+
+.letter__lock {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  max-width: 44ch;
+  text-align: center;
+  color: var(--c-text-muted);
+}
+
+/* ── Letter ─────────────────────────────────────────── */
+
+.letter-paper {
+  position: relative;
+  width: min(780px, 100%);
+  padding: clamp(32px, 6vw, 76px) clamp(24px, 6vw, 80px);
+  border-radius: var(--radius-lg);
+  transform-origin: 50% 0;
+}
+
+.letter-paper::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: calc(var(--radius-lg) - 8px);
+  pointer-events: none;
+}
+
+.letter-paper__stamp {
+  position: absolute;
+  top: clamp(18px, 3vw, 32px);
+  right: clamp(18px, 3vw, 32px);
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 64px;
+  font-size: 1.4rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--c-pink), var(--c-violet));
+  border: 3px dotted rgb(255 255 255 / 0.55);
+  border-radius: 4px;
+  transform: rotate(8deg);
+}
+
+.letter-paper__greeting {
+  margin-bottom: 0.8em;
+  font-family: var(--f-script);
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  font-weight: 700;
+  color: var(--c-rose);
+}
+
+.letter-paper__p {
+  margin-bottom: 1.3em;
+  font-family: var(--f-serif);
+  font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.2rem);
+  line-height: 1.95;
+  color: var(--c-blush);
+  text-wrap: pretty;
+}
+
+.letter-paper__greeting + .letter-paper__p::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  font-size: 3.6em;
+  font-weight: 700;
+  line-height: 0.8;
+  color: var(--c-pink);
+}
+
+.letter-paper__signoff {
+  margin-top: 2em;
+  font-family: var(--f-serif);
+  font-style: italic;
+  color: var(--c-text-muted);
+}
+
+.letter-paper__signature {
+  font-family: var(--f-script);
+  font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.6rem);
+  font-weight: 700;
+  color: var(--c-pink);
+  text-shadow: 0 0 24px rgb(255 95 162 / 0.45);
+}
