@@ -137,9 +137,9 @@ export const CONTENT = {
         colors: ['#ec4899', '#facc15'],
       },
       {
-        date: 'Today',
+        date: 'Today September 30th',
         title: 'Your birthday',
-        text: 'And here we are - another year of you in the world. The world is so much better for it.',
+        text: 'And here we are another year of you in the world. The world is so much better for it.',
         emoji: '🎂',
         image: '',
         colors: ['#ff5fa2', '#ffd6a5'],
