@@ -6,14 +6,14 @@
  * ─────────────────────────────────────────────────────────────
  */
 export const CONTENT = {
-  /** Their name (or a pet name). Used in the hero, letter and title. */
-  recipient: 'My Love',
+  /** Their name. Used in the hero, letter and title. */
+  recipient: 'My Love Mano',
 
   /** How you sign the letter. */
   sender: 'M.F.K',
 
   /** The day your story began (YYYY-MM-DD). Powers the live "our story" counters. */
-  relationshipStart: '2022-02-14',
+  relationshipStart: '2002-09-30',
 
   /**
    * Background music.
@@ -162,12 +162,12 @@ export const CONTENT = {
     lockedText: 'Your letter is still sealed. Blow out all the candles to open it.',
     greeting: 'My dearest love,',
     paragraphs: [
-      'Happy birthday to the person who turned my ordinary days into something I look forward to. Somewhere between the late-night talks and the easy silences, you became my favourite place to be.',
+      'Happy birthday to my Pichku who turned my ordinary days into something I look forward to. Somewhere between the late-night talks and the easy silences, you became my favourite place to be.',
       'Thank you for your patience when I am difficult, for your laughter when I need it most, and for the thousand small ways you make me feel chosen. I notice all of them. I keep all of them.',
       'On this day, I hope you feel even a fraction of the love you give so freely. You deserve a year of soft mornings, brave adventures and dreams that finally say yes.',
       'However many birthdays we are lucky enough to share, I promise to celebrate you on every ordinary day in between, too.',
     ],
-    signoff: 'Forever and always yours,',
+    signoff: 'Forever and always yours,'
   },
 
   finale: {
